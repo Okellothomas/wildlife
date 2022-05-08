@@ -2,6 +2,6 @@ package model;
 
 import static org.junit.Assert.*;
 
-public class NonendenTest {
+public class EndangeredTest {
 
 }
