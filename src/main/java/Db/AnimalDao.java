@@ -1,11 +1,14 @@
 package Db;
 
 import model.Animal;
+import model.Sighting;
 
 import java.util.List;
 
 public interface AnimalDao {
 
+    // create an animal
+    void create();
     // list all Animal
     List<Animal> getAllAnimal();
 
@@ -24,5 +27,9 @@ public interface AnimalDao {
     //Delete all animal
     void deleteAllAnimal();
 
-    // more methods will be added with time.
+    List<Sighting> findsighting ();
+
+    void update(String name);
+
+    // more methods will be implemented below;
 }
