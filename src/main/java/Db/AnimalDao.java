@@ -23,4 +23,6 @@ public interface AnimalDao {
 
     //Delete all animal
     void deleteAllAnimal();
+
+    // more methods will be added with time.
 }

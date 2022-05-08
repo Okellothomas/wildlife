@@ -22,4 +22,7 @@ public interface EndangeredDao {
 
     //Delete all endangered animals
     void deleteAllEndangered();
+
+    // more methods will added with time.
+
 }

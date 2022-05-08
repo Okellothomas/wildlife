@@ -14,4 +14,6 @@ public interface SightingDao {
 
     // get a specific sighting
     Sighting findSightingById(int id);
+
+    // more methods will added as the application grows.
 }
