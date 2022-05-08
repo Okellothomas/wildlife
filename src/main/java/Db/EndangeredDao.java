@@ -5,21 +5,21 @@ import model.Endangered;
 import java.util.List;
 
 public interface EndangeredDao {
-    // list all heroes
+    // list all endangeredAnimals
     List<Endangered> getAllEndangeredAnimal();
 
-    // create a new hero
+    // create a new endangeredAnimals
     void addEndangered(Endangered endangered);
 
-    // get a speciffic hero
+    // get a specific endangered animal
     Endangered findEndangeredById(int id);
 
-    // Delete a hero
+    // Delete an endangered animal
     void deleteendangeredById( int id);
 
-    // Update the hero
+    // Update the endangered animal
     void updateEngangeredById(int id);
 
-    //Delete all heroes
+    //Delete all endangered animals
     void deleteAllEndangered();
 }
