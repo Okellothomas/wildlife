@@ -21,7 +21,7 @@ public interface SightingDao {
     Sighting findSightingById(int id);
 
     // delete by id
-    Sighting deleteById();
+    void deleteById(int id);
 
     // delete all sightings.
     void deleteAllSigting();

@@ -56,6 +56,7 @@ public class Sql2oSighting implements SightingDao {
 
     @Override
     public void update(int id, String location, String name, int animalid) {
+
     }
 
 
@@ -70,9 +71,18 @@ public class Sql2oSighting implements SightingDao {
     }
 
     @Override
-    public Sighting deleteById() {
-        return null;
+    public void deleteById(int id) {
+        getDrivers();
+        String sql = "DELETE FROM sightings WHERE id = :id";
+        try(Connection conn = sql2o.open()){
+            conn.createQuery(sql)
+                    .addParameter("id",id)
+                    .executeUpdate();
+        }catch(Sql2oException e){
+            System.out.println(e);
+        }
     }
+
 
     @Override
     public void deleteAllSigting() {

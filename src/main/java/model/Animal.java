@@ -4,12 +4,11 @@ import java.util.Objects;
 
 public class Animal {
 
-    public String name;
-    public int id;
+    private String name;
+    private int id;
 
-    public Animal(String name, int id) {
+    public Animal(String name) {
         this.name = name;
-        this.id = id;
     }
 
     public String getName() {

@@ -6,13 +6,12 @@ public class Sighting {
     private String name;
     private String location;
     private int id;
-    private String animId;
-    private String endangeredId;
+    private int animId;
+    private int endangeredId;
 
-    public Sighting(String name, String location, int id, String animId, String endangeredId) {
+    public Sighting(String name, String location, int id, int animId, int endangeredId) {
         this.name = name;
         this.location = location;
-        this.id = id;
         this.animId = animId;
         this.endangeredId = endangeredId;
     }
@@ -41,19 +40,19 @@ public class Sighting {
         this.id = id;
     }
 
-    public String getAnimId() {
+    public int getAnimId() {
         return animId;
     }
 
-    public void setAnimId(String animId) {
+    public void setAnimId(int animId) {
         this.animId = animId;
     }
 
-    public String getEndangeredId() {
+    public int getEndangeredId() {
         return endangeredId;
     }
 
-    public void setEndangeredId(String endangeredId) {
+    public void setEndangeredId(int endangeredId) {
         this.endangeredId = endangeredId;
     }
 
@@ -63,10 +62,10 @@ public class Sighting {
         if (o == null || getClass() != o.getClass()) return false;
         Sighting sighting = (Sighting) o;
         return id == sighting.id &&
+                animId == sighting.animId &&
+                endangeredId == sighting.endangeredId &&
                 Objects.equals(name, sighting.name) &&
-                Objects.equals(location, sighting.location) &&
-                Objects.equals(animId, sighting.animId) &&
-                Objects.equals(endangeredId, sighting.endangeredId);
+                Objects.equals(location, sighting.location);
     }
 
     @Override

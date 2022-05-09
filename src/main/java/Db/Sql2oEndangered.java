@@ -66,7 +66,15 @@ public class Sql2oEndangered implements EndangeredDao {
 
     @Override
     public void deleteendangeredById(int id) {
-
+        getDrivers();
+        String sql = "DELETE FROM endangered WHERE id = :id";
+        try(Connection conn = sql2o.open()){
+            conn.createQuery(sql)
+                    .addParameter("id",id)
+                    .executeUpdate();
+        }catch(Sql2oException e){
+            System.out.println(e);
+        }
     }
 
     @Override

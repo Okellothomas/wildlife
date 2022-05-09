@@ -10,9 +10,8 @@ public class Endangered{
     private String health;
     private String age;
 
-    public Endangered(String name, int id, String type, String health, String age) {
+    public Endangered(String name, String type, String health, String age) {
         this.name = name;
-        this.id = id;
         this.type = type;
         this.health = health;
         this.age = age;
