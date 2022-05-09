@@ -5,6 +5,9 @@ import model.Endangered;
 import java.util.List;
 
 public interface EndangeredDao {
+
+    // create an endangered animal
+    void create();
     // list all endangeredAnimals
     List<Endangered> getAllEndangeredAnimal();
 
@@ -22,6 +25,8 @@ public interface EndangeredDao {
 
     //Delete all endangered animals
     void deleteAllEndangered();
+
+    void update(String name, String health, String age);
 
     // more methods will added with time.
 
