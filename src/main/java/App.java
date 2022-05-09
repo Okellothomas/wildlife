@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.get;
+import static spark.Spark.staticFileLocation;
 
 public class App {
     public static void main(String[] args) {
@@ -28,6 +29,7 @@ public class App {
         Sql2oEndangered endangeredDao = new Sql2oEndangered(sql2o);
         Sql2oSighting sightingDao = new Sql2oSighting(sql2o);
 
+        staticFileLocation("/public");
         get("/",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             List<Animal> allAnimal = animalDao.getAllAnimal();

@@ -7,15 +7,23 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <link rel='stylesheet' href='/app.css'>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     </head>
     <body>
     <!--Begin main template-->
-    <!-- the nav bar -->
 
+    <!-- the nav bar -->
+    <div class="mynavbar">
+      <div class="col-12">
+          <a href="" class="btn btn-primary">Animals</a>
+          <a href="" class="btn btn-success"> Endangered Animals</a>
+          <a href="" class="btn btn-danger"> Sightings </a>
+      </div>
+    </div>
     <!--the end of nav bar-->
-    <div class="container" style="margin-top:13%">
+    <div class="container" style="margin-top:1%">
         <div class="page-header" style="text-align:center;">
-            <h1 style="color:white"> Welcome and choose your Super hero and Favorite Squad. <small> </small> </h1>
+            <h1 style="color:white"> Welcome to wildfire tracking web application! <small> </small> </h1>
 
         </div>
         <div class="col-md-12">
@@ -28,8 +36,8 @@
     <!--End main template-->
     {{#block "footer"}}
         <footer class="footer">
-            <div class="container" style="text-align:center;font-size:20px" >
-                <p class="text-muted" style="color:red"> My Hero Squad Application! </p>
+            <div class="container" style="text-align:center;font-size:20px;" >
+                <h1 class="text-muted" style="color:white"> My wildfire tracking web Application! </h1>
             </div>
         </footer>
     {{/block}}

@@ -4,7 +4,7 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 .navbar{
-background-color:red;
+background-color:white;
 text-align:center;
 margin-top:1%;
 margin-bottom:5%;
@@ -12,4 +12,27 @@ margin-bottom:5%;
 a{
 border: 2px solid white;
  margin-top:4px; color:white;
+}
+img{
+border: 1.2px solid white;
+height: 200px;
+width: 200px;
+border-radius: 50%;
+}
+.navbar{
+text-align: center;
+}
+a{
+
+}
+.mynavbar{
+text-align: center;
+background-color: white
+}
+.mynavbar a{
+border-radius: 50%;
+margin: 3%;
+}
+.footer p{
+color: white;
 }
