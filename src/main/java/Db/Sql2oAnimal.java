@@ -2,10 +2,27 @@ package Db;
 
 import model.Animal;
 import model.Sighting;
+import org.sql2o.Connection;
+import org.sql2o.Sql2o;
 
 import java.util.List;
 
 public class Sql2oAnimal implements AnimalDao {
+
+    // initialize Sql2o
+    private final Sql2o sql2o;
+
+    public Sql2oAnimal(Sql2o sql2o) {
+        this.sql2o = sql2o;
+    }
+
+    public void getDrivers(){
+        try{
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void create() {
@@ -14,7 +31,12 @@ public class Sql2oAnimal implements AnimalDao {
 
     @Override
     public List<Animal> getAllAnimal() {
-        return null;
+        getDrivers();
+        String sql = "SELECT * FROM Animals WHERE animaltype";
+        try (Connection connection = sql2o.open()){
+            return connection.createQuery(sql)
+                    .executeAndFetch(Animal.class);
+        }
     }
 
     @Override
