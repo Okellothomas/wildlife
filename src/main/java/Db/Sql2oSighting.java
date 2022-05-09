@@ -75,7 +75,14 @@ public class Sql2oSighting implements SightingDao {
     }
 
     @Override
-    public Sighting deleteAllSigting() {
-        return null;
+    public void deleteAllSigting() {
+        getDrivers();
+        String sql = "DELETE from sightings";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .executeUpdate();
+        } catch (Sql2oException e) {
+            System.out.println(e);
+        }
     }
 }

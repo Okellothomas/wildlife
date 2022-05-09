@@ -24,7 +24,7 @@ public interface SightingDao {
     Sighting deleteById();
 
     // delete all sightings.
-    Sighting deleteAllSigting();
+    void deleteAllSigting();
 
     // more methods will added as the application grows.
 
