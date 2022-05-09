@@ -56,7 +56,12 @@ public class Sql2oEndangered implements EndangeredDao {
 
     @Override
     public Endangered findEndangeredById(int id) {
-        return null;
+        getDrivers();
+        try(Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM endangered WHERE id = :id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Endangered.class);
+        }
     }
 
     @Override

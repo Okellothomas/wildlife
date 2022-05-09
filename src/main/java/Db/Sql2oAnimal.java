@@ -56,7 +56,12 @@ public class Sql2oAnimal implements AnimalDao {
 
     @Override
     public Animal findAnimalById(int id) {
-        return null;
+        getDrivers();
+        try(Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM animals WHERE id = :id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Animal.class);
+        }
     }
 
     @Override
