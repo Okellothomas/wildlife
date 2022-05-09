@@ -93,6 +93,14 @@ public class Sql2oAnimal implements AnimalDao {
 
     @Override
     public void update(String name) {
-
+        getDrivers();
+        String sql = "UPDATE animals SET (name) VALUES (:name)";
+        try(Connection conn = sql2o.open()){
+            int id = (int) conn.createQuery(sql,true)
+                    .executeUpdate()
+                    .getKey();
+        }catch(Sql2oException e){
+            System.out.println(e);
+        }
     }
 }

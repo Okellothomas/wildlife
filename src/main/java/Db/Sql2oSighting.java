@@ -56,8 +56,8 @@ public class Sql2oSighting implements SightingDao {
 
     @Override
     public void update(int id, String location, String name, int animalid) {
-
     }
+
 
     @Override
     public Sighting findSightingById(int id) {

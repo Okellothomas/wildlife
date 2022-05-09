@@ -88,6 +88,14 @@ public class Sql2oEndangered implements EndangeredDao {
 
     @Override
     public void update(String name, String health, String age) {
-
+        getDrivers();
+        String sql = "UPDATE endangered SET (name,type,health,age) VALUES (:name,:type,:health,:age)";
+        try(Connection conn = sql2o.open()){
+            int id = (int) conn.createQuery(sql,true)
+                    .executeUpdate()
+                    .getKey();
+        }catch(Sql2oException e){
+            System.out.println(e);
+        }
     }
 }
