@@ -2,21 +2,44 @@ package model;
 
 import java.util.Objects;
 
-public class Endangered extends Animal{
-    // add variables to class
-    private static final String Animal_Type = "Endangered_Animal";
+public class Endangered{
+
+    private String name;
+    private int id;
+    private String type;
     private String health;
     private String age;
 
-    public Endangered(String name, String health, String age) {
-        super(name);
+    public Endangered(String name, int id, String type, String health, String age) {
+        this.name = name;
+        this.id = id;
+        this.type = type;
         this.health = health;
         this.age = age;
-        this.animaltype = Animal_Type;
     }
 
-    public static String getAnimal_Type() {
-        return Animal_Type;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getHealth() {
@@ -39,14 +62,16 @@ public class Endangered extends Animal{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
         Endangered that = (Endangered) o;
-        return Objects.equals(health, that.health) &&
+        return id == that.id &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(type, that.type) &&
+                Objects.equals(health, that.health) &&
                 Objects.equals(age, that.age);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), health, age);
+        return Objects.hash(name, id, type, health, age);
     }
 }

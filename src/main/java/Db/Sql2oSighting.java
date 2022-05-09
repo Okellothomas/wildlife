@@ -1,6 +1,7 @@
 package Db;
 
 import model.Sighting;
+import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
 import java.util.List;
@@ -14,6 +15,13 @@ public class Sql2oSighting implements SightingDao {
         this.sql2o = sql2o;
     }
 
+    public void getDrivers(){
+        try{
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void create() {
@@ -22,7 +30,12 @@ public class Sql2oSighting implements SightingDao {
 
     @Override
     public List<Sighting> getAllSighting() {
-        return null;
+        getDrivers();
+        String sql = "SELECT * FROM sightings";
+        try (Connection connection = sql2o.open()){
+            return connection.createQuery(sql)
+                    .executeAndFetch(Sighting.class);
+        }
     }
 
     @Override

@@ -7,12 +7,14 @@ public class Sighting {
     private String location;
     private String id;
     private String animId;
+    private String endangeredId;
 
-    public Sighting(String name, String location, String id, String animId) {
+    public Sighting(String name, String location, String id, String animId, String endangeredId) {
         this.name = name;
         this.location = location;
         this.id = id;
         this.animId = animId;
+        this.endangeredId = endangeredId;
     }
 
     public String getName() {
@@ -47,6 +49,14 @@ public class Sighting {
         this.animId = animId;
     }
 
+    public String getEndangeredId() {
+        return endangeredId;
+    }
+
+    public void setEndangeredId(String endangeredId) {
+        this.endangeredId = endangeredId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -55,11 +65,12 @@ public class Sighting {
         return Objects.equals(name, sighting.name) &&
                 Objects.equals(location, sighting.location) &&
                 Objects.equals(id, sighting.id) &&
-                Objects.equals(animId, sighting.animId);
+                Objects.equals(animId, sighting.animId) &&
+                Objects.equals(endangeredId, sighting.endangeredId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, location, id, animId);
+        return Objects.hash(name, location, id, animId, endangeredId);
     }
 }
