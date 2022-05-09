@@ -3,6 +3,7 @@ package Db;
 import model.Sighting;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
+import org.sql2o.Sql2oException;
 
 import java.util.List;
 
@@ -40,7 +41,17 @@ public class Sql2oSighting implements SightingDao {
 
     @Override
     public void addSighting(Sighting sighting) {
-
+        getDrivers();
+        String sql = "INSERT INTO sightings (name,location,animId,endangeredId) VALUES (:name,:location,:animId,:endangeredId)";
+        try(Connection conn = sql2o.open()){
+            int id = (int) conn.createQuery(sql,true)
+                    .bind(sighting)
+                    .executeUpdate()
+                    .getKey();
+            sighting.setId(id);
+        }catch(Sql2oException e){
+            System.out.println(e);
+        }
     }
 
     @Override

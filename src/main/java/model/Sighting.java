@@ -5,11 +5,11 @@ import java.util.Objects;
 public class Sighting {
     private String name;
     private String location;
-    private String id;
+    private int id;
     private String animId;
     private String endangeredId;
 
-    public Sighting(String name, String location, String id, String animId, String endangeredId) {
+    public Sighting(String name, String location, int id, String animId, String endangeredId) {
         this.name = name;
         this.location = location;
         this.id = id;
@@ -33,11 +33,11 @@ public class Sighting {
         this.location = location;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -62,9 +62,9 @@ public class Sighting {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Sighting sighting = (Sighting) o;
-        return Objects.equals(name, sighting.name) &&
+        return id == sighting.id &&
+                Objects.equals(name, sighting.name) &&
                 Objects.equals(location, sighting.location) &&
-                Objects.equals(id, sighting.id) &&
                 Objects.equals(animId, sighting.animId) &&
                 Objects.equals(endangeredId, sighting.endangeredId);
     }
