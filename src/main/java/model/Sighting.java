@@ -9,7 +9,7 @@ public class Sighting {
     private int animId;
     private int endangeredId;
 
-    public Sighting(String name, String location, int id, int animId, int endangeredId) {
+    public Sighting(String name, String location, int animId, int endangeredId) {
         this.name = name;
         this.location = location;
         this.animId = animId;
