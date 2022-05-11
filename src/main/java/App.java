@@ -142,12 +142,24 @@ public class App {
         },new HandlebarsTemplateEngine());
 
         //process new sighting.
+//        post("/sighting",(request,response)->{
+//            Map<String, Object>model = new HashMap<>();
+//            String name = request.queryParams("name");
+//            String location = request.queryParams("location");
+//            int animalId =Integer.parseInt(request.queryParams("name"));
+//            int endangeredId = Integer.parseInt(request.queryParams("name"));
+//            Sighting sighting = new Sighting(name, location, animalId, endangeredId);
+//            sightingDao.addSighting(sighting);
+//            response.redirect("/");
+//            return null;
+//        },new HandlebarsTemplateEngine());
+
         post("/sighting",(request,response)->{
-            Map<String, Object>model = new HashMap<>();
+            Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
             String location = request.queryParams("location");
-            int animalId =Integer.parseInt(request.queryParams("name"));
-            int endangeredId = Integer.parseInt(request.queryParams("name"));
+            int animalId =Integer.parseInt(request.queryParams("animalId"));
+            int endangeredId = Integer.parseInt(request.queryParams("endangeredId"));
             Sighting sighting = new Sighting(name, location, animalId, endangeredId);
             sightingDao.addSighting(sighting);
             response.redirect("/");
