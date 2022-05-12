@@ -1,0 +1,61 @@
+{{#partial "content"}}
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="btn aqua-gradient text-white"></a>
+        </div>
+
+        <div class="container-fluid">
+            <div class="col-6">
+                <h3>Endangered Animals!</h3>
+                <br>
+                <br>
+                <img src="/images/animalenda.jpg">
+                <br>
+                <br>
+                <a href="/endangered" class="btn btn-outline-primary"> Explore more </a>
+            </div>
+            <div class="col-6">
+                <div class="container-fluid" style="text-align:center; color:white;">
+                        <h1>Add sighted endangered Animal</h1>
+                        <form action="/endangered" method="post">
+                            <div class="form-group">
+                                <label for="name">Animal Name:</label>
+                                <input id="name" placeholder="Name of Endangered Animal" name="name" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="health">Animal's Health condition:</label>
+                                <select id="health" name="health" class="form-control">
+                                    <option value="healthy">healthy</option>
+                                    <option value="ill">ill</option>
+                                    <option value="Okay">Okay</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Animal's Age:</label>
+                                <select id="age" name="age" class="form-control">
+                                    <option value="newborn">newborn</option>
+                                    <option value="young">young</option>
+                                    <option value="adult">adult</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Animal's Type:</label>
+                                <select id="type" name="type" class="form-control">
+                                    <option value="newborn">Non-Endangered</option>
+                                    <option value="young">Endangered</option>
+                                </select>
+                            </div>
+                            <br>
+                            <button type="submit" class="button btn-warning">Submit</button>
+                            <br>
+                            <hr>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+{{/partial}}
+{{> layout.hbs}}

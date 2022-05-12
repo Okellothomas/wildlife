@@ -1,0 +1,21 @@
+{{#partial "content"}}
+    <div class="container text-start mx-auto">
+
+        <div class="card mb-3 mx-auto" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{animal.name}}</h5>
+                        <p class="card-text">
+                        <p>Name: {{animal.name}}</p>
+                        <p class="card-footer">
+                        <p><a class="btn btn-danger justify-content-left" href="/animal/{{animal.id}}/delete">delete {{animal.name}}</a> </p>
+                        <a href="/animal/new" class="btn btn-outline-danger"> Add Animal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{{/partial}}
+{{> layout.hbs}}

@@ -1,17 +1,22 @@
 package model;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class AnimalTest {
 
-    @Before
-    public void setUp() throws Exception {
+
+    @Test
+    public void getNameReturnsCorrectName_String() {
+        Animal newAnimal = setNewAnimal();
+        assertEquals("Zebra", newAnimal.getName());
     }
 
-    @After
-    public void tearDown() throws Exception {
-    }
+    // the helper classes.
+
+     public Animal setNewAnimal(){
+        return new Animal("Zebra");
+     }
+
 }

@@ -1,0 +1,10 @@
+App.class
+Db/Sql2oSighting.class
+Db/Sql2oEndangered.class
+Db/EndangeredDao.class
+model/Sighting.class
+model/Endangered.class
+Db/Sql2oAnimal.class
+Db/AnimalDao.class
+model/Animal.class
+Db/SightingDao.class

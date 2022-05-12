@@ -1,0 +1,52 @@
+{{#partial "content"}}
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="btn aqua-gradient text-white"></a>
+        </div>
+
+        <div class="container-fluid">
+            <div class="col-6">
+                <h3>New Sightings!</h3>
+                <br>
+                <br>
+                <img src="/images/sightsaving.jpg">
+                <br>
+                <br>
+                <a href="/sighting" class="btn btn-outline-primary"> Explore more </a>
+            </div>
+            <div class="col-6">
+                <form action="/sighting" method="post">
+                        <div class="form-group">
+                            <label for="name">Ranger's Name!</label>
+                            <input id="name" placeholder="Ranger's Name." name="name" class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Enter location:</label>
+                            <select id="location" name="location" class="form-control">
+                                <option value="Bigrock">Bigrock</option>
+                                <option value="Spring">Spring</option>
+                                <option value="RiverBank">RiverBank</option>
+                                <option value="Central Valley">Central Value</option>
+                                <option value="Norther Gate">Norther Gate</option>
+                                <option value="Western Gate">Western Gate</option>
+                                <option value="Eastern Gate">Eastern Gate</option>
+                                <option value="Main Gate">Main Gate</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="animalId">Animal</label>
+                            <input id="animalId" value="1" name="animalId" class="form-control" type="number">
+                            <label for="endangeredId">Endangered Animal</label>
+                            <input id="endangeredId" value="0" name="endangeredId" class="form-control" type="number">
+                            <br>
+                        </div>
+                    <button type="submit" class="button  btn-warning">Submit</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+{{/partial}}
+{{> layout.hbs}}

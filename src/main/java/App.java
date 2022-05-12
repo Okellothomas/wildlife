@@ -32,6 +32,10 @@ public class App {
 //        String connection = "jdbc:postgresql://ec2-54-164-40-66.compute-1.amazonaws.com:5432/de1h4m5ivjads6";
 //        Sql2o sql2o = new Sql2o(connection,"kcwccchgzcvgsj","76460fa43059578741111553ea5c863182af371df12ffba77e193105946a865f");
 
+//        String connection = "jdbc:postgresql://ec2-3-223-213-207.compute-1.amazonaws.com:5432/d8qq7d9hl9pnlb";
+//        Sql2o sql2o = new Sql2o(connection,"wxvdvwfjouoauh","840f98208308d49ff2c21c50224b54bd0c200f86234e99725ec7793ced88ebdc");
+
+
         String connect =  "jdbc:postgresql://localhost/wildlife_trackers";
         Sql2o sql2o = new Sql2o(connect,"postgres","okello");
 
@@ -73,12 +77,8 @@ public class App {
 
         get("/endangered",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
-//            List<Animal> allAnimal = animalDao.getAllAnimal();
-//            model.put("animal",allAnimal);
             List<Endangered> allEndangeredAnimal = endangeredDao.getAllEndangeredAnimal();
             model.put("endangered",allEndangeredAnimal);
-//            List<Sighting> allSightings = sightingDao.getAllSighting();
-//            model.put("sighting", allSightings);
             return new ModelAndView(model,"endanger.hbs");
         },new HandlebarsTemplateEngine());
 
@@ -141,18 +141,6 @@ public class App {
             return new ModelAndView(model,"newsighting.hbs");
         },new HandlebarsTemplateEngine());
 
-        //process new sighting.
-//        post("/sighting",(request,response)->{
-//            Map<String, Object>model = new HashMap<>();
-//            String name = request.queryParams("name");
-//            String location = request.queryParams("location");
-//            int animalId =Integer.parseInt(request.queryParams("name"));
-//            int endangeredId = Integer.parseInt(request.queryParams("name"));
-//            Sighting sighting = new Sighting(name, location, animalId, endangeredId);
-//            sightingDao.addSighting(sighting);
-//            response.redirect("/");
-//            return null;
-//        },new HandlebarsTemplateEngine());
 
         post("/sighting",(request,response)->{
             Map<String, Object> model = new HashMap<>();
