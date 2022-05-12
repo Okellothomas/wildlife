@@ -29,15 +29,13 @@ public class App {
 
         // creating a db connection:
 
-//        String connection = "jdbc:postgresql://ec2-54-164-40-66.compute-1.amazonaws.com:5432/de1h4m5ivjads6";
-//        Sql2o sql2o = new Sql2o(connection,"kcwccchgzcvgsj","76460fa43059578741111553ea5c863182af371df12ffba77e193105946a865f");
 
-//        String connection = "jdbc:postgresql://ec2-3-223-213-207.compute-1.amazonaws.com:5432/d8qq7d9hl9pnlb";
-//        Sql2o sql2o = new Sql2o(connection,"wxvdvwfjouoauh","840f98208308d49ff2c21c50224b54bd0c200f86234e99725ec7793ced88ebdc");
+        String connection = "jdbc:postgresql://ec2-34-236-94-53.compute-1.amazonaws.com:5432/d4vhh1rqab9mgp";
+        Sql2o sql2o = new Sql2o(connection,"zpaujdldwlfuqf","3a2660c8e57b1d655f06b0029f19fc86e6870ed65d726ee93db40e25684bcae8");
 
 
-        String connect =  "jdbc:postgresql://localhost/wildlife_trackers";
-        Sql2o sql2o = new Sql2o(connect,"postgres","okello");
+//        String connect =  "jdbc:postgresql://localhost/wildlife_trackers";
+//        Sql2o sql2o = new Sql2o(connect,"postgres","okello");
 
         Sql2oAnimal animalDao = new Sql2oAnimal(sql2o);
         Sql2oEndangered endangeredDao = new Sql2oEndangered(sql2o);

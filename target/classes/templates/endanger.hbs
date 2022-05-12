@@ -5,17 +5,22 @@
         <div class="card mb-3 mx-auto" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-8">
+                    {{#each endangered}}
                     <div class="card-body">
-                        <h5 class="card-title">{{endangered.name}}</h5>
+                        <h5 class="card-title">{{name}}</h5>
                         <p class="card-text">
-                        <p>Animal Name: {{endangered.name}}</p>
-                        <p>Animal Type: {{endangered.type}}</p>
-                        <p>Animal Age: {{endangered.age}}</p>
-                        <p>Animal Health: {{endangered.health}}</p>
+                        <p>Animal Name: {{name}}</p>
+                        <p>Animal Age: {{age}}</p>
+                        <p>Animal Health: {{health}}</p>
+                        <p>Animal Type: {{type}}</p>
                         <p class="card-footer">
-                        <p><a class="btn btn-danger justify-content-left" href="/endanger/{{endangered.id}}/delete">delete {{endangered.name}}</a> </p>
-                        <a href="/endangered/new" class="btn btn-outline-success">Add Endangered</a>
+                        <p><a class="btn btn-danger justify-content-left" href="/endangered/{{id}}/delete">delete {{name}}</a> </p>
+                        <hr>
                     </div>
+                        {{/each}}
+                    <a href="/endangered/new" class="btn btn-outline-success">Add Endangered</a>
+                    <hr>
+                    <p><a class="btn btn-danger justify-content-left" href="/endengered/delete">Clear Endangered Animals</a> </p>
                 </div>
             </div>
         </div>
