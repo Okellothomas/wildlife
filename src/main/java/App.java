@@ -169,5 +169,32 @@ public class App {
             response.redirect("/");
             return null;
         },new HandlebarsTemplateEngine());
+
+       //delete animal by Id
+        get("/animal/:id/delete",(request, response)->{
+            Map<String, Object>model = new HashMap<>();
+            int idOfAnimalToDelete = Integer.parseInt(request.params("id"));
+            animalDao.deleteAnimalById(idOfAnimalToDelete);
+            response.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
+        //delete sighting by Id
+        get("/sighting/:id/delete",(request, response)->{
+            Map<String, Object>model = new HashMap<>();
+            int idOfSightingToDelete = Integer.parseInt(request.params("id"));
+            sightingDao.deleteById(idOfSightingToDelete);
+            response.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
+        //delete endangered by Id
+        get("/endangered/:id/delete",(request, response)->{
+            Map<String, Object>model = new HashMap<>();
+            int idOfEndangeredToDelete = Integer.parseInt(request.params("id"));
+            endangeredDao.deleteendangeredById(idOfEndangeredToDelete);
+            response.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
     }
 }

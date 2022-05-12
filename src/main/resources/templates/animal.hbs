@@ -4,14 +4,19 @@
         <div class="card mb-3 mx-auto" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-8">
+                    {{#each animal}}
                     <div class="card-body">
-                        <h5 class="card-title">{{animal.name}}</h5>
+                        <h5 class="card-title">{{name}}</h5>
                         <p class="card-text">
-                        <p>Name: {{animal.name}}</p>
+                        <p>Name: {{name}}</p>
                         <p class="card-footer">
-                        <p><a class="btn btn-danger justify-content-left" href="/animal/{{animal.id}}/delete">delete {{animal.name}}</a> </p>
-                        <a href="/animal/new" class="btn btn-outline-danger"> Add Animal</a>
+                        <p><a class="btn btn-danger justify-content-left" href="/animal/{{id}}/delete">delete {{name}}</a> </p>
+                        <hr>
                     </div>
+                        {{/each}}
+                    <a href="/animal/new" class="btn btn-outline-danger"> Add Animal</a>
+                    <hr>
+                    <p><a class="btn btn-danger justify-content-left" href="/animal/delete">Clear Animals</a> </p>
                 </div>
             </div>
         </div>

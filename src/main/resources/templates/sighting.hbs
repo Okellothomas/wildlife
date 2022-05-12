@@ -5,17 +5,22 @@
         <div class="card mb-3 mx-auto" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-8">
+                    {{#each sighting}}
                     <div class="card-body">
-                        <h5 class="card-title">{{sighting.name}}</h5>
+                        <h5 class="card-title">{{name}}</h5>
                         <p class="card-text">
-                        <p>Sight Name: {{sighting.name}}</p>
-                        <p>Location: {{sighting.location}}</p>
-                        <p>Animal No: {{sighting.animalId}}</p>
-                        <p>Endangered Animal No: {{sighting.endangeredId}}</p>
+                        <p>Sight Name: {{name}}</p>
+                        <p>Location: {{location}}</p>
+                        <p>Animal No: {{animalId}}</p>
+                        <p>Endangered Animal No: {{endangeredId}}</p>
                         <p class="card-footer">
-                        <p><a class="btn btn-danger justify-content-left" href="/sighting/{{sighting.id}}/delete">delete {{sighting.name}}</a> </p>
-                        <a href="/sighting/new" class="btn btn-outline-primary">Add Sighting</a>
+                        <p><a class="btn btn-danger justify-content-left" href="/sighting/{{id}}/delete">delete {{name}}</a> </p>
+                        <hr>
                     </div>
+                        {{/each}}
+                    <a href="/sighting/new" class="btn btn-outline-primary">Add Sighting</a>
+                    <hr>
+                    <p><a class="btn btn-danger justify-content-left" href="/sightings/delete">Clear Sightings</a> </p>
                 </div>
             </div>
         </div>
