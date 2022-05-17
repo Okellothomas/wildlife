@@ -30,8 +30,8 @@ public class App {
         // creating a db connection:
 
 
-        String connection = "jdbc:postgresql://ec2-34-236-94-53.compute-1.amazonaws.com:5432/d4vhh1rqab9mgp";
-        Sql2o sql2o = new Sql2o(connection,"zpaujdldwlfuqf","3a2660c8e57b1d655f06b0029f19fc86e6870ed65d726ee93db40e25684bcae8");
+        String connection = "jdbc:postgresql://ec2-54-172-175-251.compute-1.amazonaws.com:5432/d19tsrp5ts9arv";
+        Sql2o sql2o = new Sql2o(connection,"acutsmyrvfxroj","f6f2568b1bedb19e5723424cd139ea089f13b9effb3756dcc39ca0ba0196a631");
 
 
 //        String connect =  "jdbc:postgresql://localhost/wildlife_trackers";
